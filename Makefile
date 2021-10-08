@@ -1,12 +1,10 @@
 
-SRC=$(wildcard *.rs)
-
 .PHONY: all
 all: helloworld.x
 
-helloworld.x: helloworld.rs
+%.x: %.rs
 	rustc $< -o $@
 
 .PHONY: clean
 clean: 
-	rm *.x
+	rm -f *.x
